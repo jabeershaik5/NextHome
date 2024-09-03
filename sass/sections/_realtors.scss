@@ -1,0 +1,57 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.realtors{
+    grid-column: col-end 5/-1;
+    background-color:$color-secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include responsive(900){
+        grid-column: full-start / full-end;
+        grid-row: 3 / span 1;
+        padding:2rem 0;
+    }
+
+    &__title{
+        @include font-sizer($title-small ,$color-primary);
+    }
+
+    &__container{
+        width:auto;
+        height:auto;
+    }
+}
+.container{
+    margin:2rem 0.5rem;
+    display: flex;
+
+    &__image{
+        height:4.5rem;
+        width:4.5rem;
+        background-color: white;
+        border-radius: 50%;
+        overflow: hidden;
+        margin:0.5rem 2rem;
+
+        img{
+            height:100%;
+            width:100%;
+            object-fit: cover;
+        }
+    }
+    &__details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    &__realtor-name{
+        @include font-sizer($title-small, white);
+    }
+    &__house-count{
+        @include font-sizer($title-xs, $color-grey-light-2);
+    }
+}

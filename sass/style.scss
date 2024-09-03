@@ -1,0 +1,60 @@
+@import './base/base';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './components/buttons';
+
+@import './sections/header';
+@import './sections/realtors';
+@import './sections/features';
+@import './sections/stories-img';
+@import './sections/stories-review';
+@import './sections/cards';
+@import './sections/gallery';
+@import './sections/footer';
+
+.page-container{
+    width:100%;
+    height:100vh;
+    
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(2, min-content);
+    grid-template-columns: [sidebar-start] 6rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(7, [col-start] minmax(min-content, 14rem) [col-end])[center-end] minmax(6rem, 1fr) [full-end];
+    
+    @include responsive(900){
+        grid-template-rows: 6rem  minmax(70vh, 70vh) minmax(max-content, 30vh) min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(7, [col-start] minmax(min-content, 14rem) [col-end])[center-end] minmax(6rem, 1fr) [full-end];
+        
+    }
+}
+.sidebar{
+    grid-row: 1/-1;
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding:2rem 0;
+
+    @include responsive(900){
+        grid-row: 1 / 2;
+        grid-column: full-start / full-end;
+        padding:1rem 2rem;
+        align-items: end;
+    }
+
+    span{
+        height:2px;
+        width:2.5rem;
+        background-color: white;
+        margin: 0.4rem 0;
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+

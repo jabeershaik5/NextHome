@@ -1,0 +1,33 @@
+@import '../abstracts/mixins';
+
+*,
+*::after,
+*::before{
+    padding:0;
+    margin:0;
+    box-sizing: inherit;
+    list-style:none;
+}
+
+
+html{
+    font-size:62.5%;
+    box-sizing: border-box;
+
+    @include responsive(1100){
+        font-size: 58%;
+    }
+    // @include responsive(900){
+    //     font-size: 55%;
+    // }
+    @include responsive(680){
+        font-size: 55%;
+    }
+    @include responsive(480){
+        font-size: 48%;
+    }
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,8 @@
+.cards{
+    grid-column: full-start / full-end;
+    background-color: red;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding:10rem;
+}

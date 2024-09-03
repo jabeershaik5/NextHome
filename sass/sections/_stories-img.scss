@@ -1,0 +1,38 @@
+.stories{
+    &-image{
+        grid-column: full-start/col-end 4;
+        background-image: linear-gradient(to right, rgba($color-primary, 0.7), rgba($color-primary, 0.7)),  url('../../assets/images/dmitry-bukhantsov-s21xBkQKEs8-unsplash.jpg');
+        background-size: cover;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+
+        @include responsive(900){
+            grid-column: full-start / full-end;
+        }
+    }
+    
+   &__image-1{
+        width:100%;
+        grid-column: 2 / 6;
+        grid-row: 2/ 6;
+        -webkit-box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+        box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+    }
+    &__image-2{
+        width:130%;
+        grid-row: 4 / 7;
+        grid-column: 5 / 7;
+        z-index:11;
+        -webkit-box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+        box-shadow: 6px 8px 29px -2px rgba(0,0,0,0.75);
+
+        @include responsive(900){
+            grid-column: 4/ 7;
+            width:100%;
+        }
+    }
+}

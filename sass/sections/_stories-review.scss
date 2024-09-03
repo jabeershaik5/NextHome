@@ -1,0 +1,33 @@
+@import '../abstracts/mixins';
+
+.stories-review{
+    grid-column: col-end 4/ -1;
+    background-color: $color-grey-light-1;
+    padding:5rem 2rem;
+    padding-left:10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    @include responsive(900){
+        grid-row:6 / span 1;
+        grid-column: full-start / full-end;
+    }
+
+    &__tag{
+        @include font-sizer($title-small, $color-primary);
+    }
+    &__title{
+        @include font-sizer($title-large, black);
+        font-style: italic;
+    }
+    &__review{
+        margin:3rem 0;
+        @include font-sizer($title-small, black);
+    }
+    &__btn{
+        justify-self: start;
+        display: inline-block;
+    }
+}

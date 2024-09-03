@@ -1,0 +1,63 @@
+@import '../abstracts/mixins';
+
+.header{
+    grid-column: full-start/ col-end 5;
+    background-image: linear-gradient(to right, rgba($color-secondary,0.9), rgba($color-secondary,0.9)), 
+                        url('../../assets/images/r-architecture-2gDwlIim3Uw-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    padding:5rem;
+    padding-top: 4rem;
+    display: grid;
+    grid-template-rows: 1fr min-content min-content 1fr min-content;
+    grid-row-gap:1.5rem;
+    grid-template-columns: max-content;
+
+    @include responsive(900){
+        grid-row: 2 / span 1;
+        grid-column: full-start/ full-end;
+    }
+    @include responsive(480){
+        grid-template-columns: minmax(min-content, max-content);
+        padding:2rem;
+    }
+
+    &__logo{
+        height:5rem;
+        width:15rem;
+        justify-self: center;
+        object-fit: right;
+        display: block;
+        cursor: pointer;
+
+    }
+    &__title{
+        @include font-sizer($title-large, white);
+        height:auto;
+    }
+    &__title-small{
+        @include font-sizer($title-small, $color-primary);
+    }
+    &__btn{
+        justify-self: start;
+        align-self: start;
+    }
+    &__mentions{
+        display: flex;
+
+        @include font-sizer($title-large, white);
+        justify-content: space-around   ;
+    }
+    &__logo{
+        height:3rem;
+        width:auto;
+        margin:0 1.5rem;
+        display: inline-block;
+        filter:brightness(70%);
+
+        @include responsive(900){
+            height:2.5rem;
+            width:6rem;
+        }
+    }
+}

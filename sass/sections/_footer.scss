@@ -1,0 +1,47 @@
+@import '../abstracts/mixins';
+
+.footer{
+    grid-column: full-start / full-end;
+    background-color: $color-secondary;
+    color:white;
+    padding:4rem;
+
+    @include responsive(1100){
+        padding: 2rem;;
+    }
+
+    &__nav{
+        display: grid;
+        grid-template-columns: repeat(6, minmax(max-content, 1fr));
+        justify-items: center;
+        align-items: center;
+        grid-gap:1rem;
+        margin:2rem;
+        @include responsive(1100){
+            margin:1rem;
+            grid-template-columns: repeat(3, minmax(max-content, 1fr));
+        }
+        @include responsive(680){
+            margin:1rem;
+            grid-template-columns: repeat(1, minmax(max-content, 1fr));
+        }
+    }
+
+    a{
+        text-decoration: none;
+        @include font-sizer($title-small, $color-grey-light-2);
+        padding:1.5rem;
+        justify-self: center;
+        align-self: center;
+        display: block;
+
+        &:hover{
+            background-color:rgba(128, 128, 128, 0.347)   
+        }
+    }
+    .dev{
+        margin-top:5rem;
+        @include font-sizer($title-xs, $color-grey-light-2);
+        text-align: center;
+    }
+}
